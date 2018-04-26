@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
+import static com.github.ingvarc.math.NumberOfDigits.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.params.provider.Arguments.of;
@@ -21,51 +22,51 @@ class NumberOfDigitsTest {
                 of(Long.MAX_VALUE, 19));
     }
 
-    @DisplayName("countDigitsByDivision(long);")
+    @DisplayName("countDigitsUsingDivision(long);")
     @ParameterizedTest(name = "Digits in \"{0}\" should be {1}")
     @MethodSource("createNumbersWithLength")
-    void countDigitsByDivision(long number, int length) {
-        assertEquals(NumberOfDigits.countDigitsByDivision(number), length);
-        assertThrows(IllegalArgumentException.class, () -> NumberOfDigits.countDigitsByDivision(~number));
+    void countDigitsUsingDivisionTest(long number, int length) {
+        assertEquals(countDigitsUsingDivision(number), length);
+        assertThrows(IllegalArgumentException.class, () -> countDigitsUsingDivision(~number));
     }
 
-    @DisplayName("countDigitsByMultiplication(long);")
+    @DisplayName("countDigitsUsingMultiplication(long);")
     @ParameterizedTest(name = "Digits in \"{0}\" should be {1}")
     @MethodSource("createNumbersWithLength")
-    void countDigitsByMultiplication(long number, int length) {
-        assertEquals(NumberOfDigits.countDigitsByMultiplication(number), length);
-        assertThrows(IllegalArgumentException.class, () -> NumberOfDigits.countDigitsByMultiplication(~number));
+    void countDigitsUsingMultiplicationTest(long number, int length) {
+        assertEquals(countDigitsUsingMultiplication(number), length);
+        assertThrows(IllegalArgumentException.class, () -> countDigitsUsingMultiplication(~number));
     }
 
-    @DisplayName("countDigitsToString(long);")
+    @DisplayName("countDigitsConvertingToString(long);")
     @ParameterizedTest(name = "Digits in \"{0}\" should be {1}")
     @MethodSource("createNumbersWithLength")
-    void countDigitsToString(long number, int length) {
-        assertEquals(NumberOfDigits.countDigitsToString(number), length);
-        assertThrows(IllegalArgumentException.class, () -> NumberOfDigits.countDigitsToString(~number));
+    void countDigitsConvertingToStringTest(long number, int length) {
+        assertEquals(countDigitsConvertingToString(number), length);
+        assertThrows(IllegalArgumentException.class, () -> countDigitsConvertingToString(~number));
     }
 
-    @DisplayName("countDigitsLog(long);")
+    @DisplayName("countDigitsUsingCommonLogarithm(long);")
     @ParameterizedTest(name = "Digits in \"{0}\" should be {1}")
     @MethodSource("createNumbersWithLength")
-    void countDigitsLog(long number, int length) {
-        assertEquals(NumberOfDigits.countDigitsLog(number), length);
-        assertThrows(IllegalArgumentException.class, () -> NumberOfDigits.countDigitsLog(~number));
+    void countDigitsUsingCommonLogarithmTest(long number, int length) {
+        assertEquals(countDigitsUsingCommonLogarithm(number), length);
+        assertThrows(IllegalArgumentException.class, () -> countDigitsUsingCommonLogarithm(~number));
     }
 
-    @DisplayName("countDigitsBitwise(long);")
+    @DisplayName("countDigitsUsingBitwiseShifts(long);")
     @ParameterizedTest(name = "Digits in \"{0}\" should be {1}")
     @MethodSource("createNumbersWithLength")
-    void countDigitsBitwise(long number, int length) {
-        assertEquals(NumberOfDigits.countDigitsBitwise(number), length);
-        assertThrows(IllegalArgumentException.class, () -> NumberOfDigits.countDigitsBitwise(~number));
+    void countDigitsUsingBitwiseShiftsTest(long number, int length) {
+        assertEquals(countDigitsUsingBitwiseShifts(number), length);
+        assertThrows(IllegalArgumentException.class, () -> countDigitsUsingBitwiseShifts(~number));
     }
 
-    @DisplayName("countDigitsByDivisionByPowerOfTwo(long);")
+    @DisplayName("countDigitsUsingDivisionByPowerOfTwo(long);")
     @ParameterizedTest(name = "Digits in \"{0}\" should be {1}")
     @MethodSource("createNumbersWithLength")
-    void countDigitsByDivisionByPowerOfTwo(long number, int length) {
-        assertEquals(NumberOfDigits.countDigitsByDivisionByPowerOfTwo(number), length);
-        assertThrows(IllegalArgumentException.class, () -> NumberOfDigits.countDigitsByDivisionByPowerOfTwo(~number));
+    void countDigitsUsingDivisionByPowerOfTwoTest(long number, int length) {
+        assertEquals(countDigitsUsingDivisionByPowerOfTwo(number), length);
+        assertThrows(IllegalArgumentException.class, () -> countDigitsUsingDivisionByPowerOfTwo(~number));
     }
 }

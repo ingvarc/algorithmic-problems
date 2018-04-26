@@ -8,6 +8,8 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.github.ingvarc.math.NumberOfDigits.*;
+
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @Warmup(iterations = 10, time = 1)
@@ -27,32 +29,32 @@ public class NumberOfDigitsBenchmark {
     }
 
     @Benchmark
-    public void countDigitsByDivision() {
-        NumberOfDigits.countDigitsByDivision(number);
+    public void countDigitsUsingDivisionBenchmark() {
+        countDigitsUsingDivision(number);
     }
 
     @Benchmark
-    public void countDigitsByMultiplication() {
-        NumberOfDigits.countDigitsByMultiplication(number);
+    public void countDigitsUsingMultiplicationBenchmark() {
+        countDigitsUsingMultiplication(number);
     }
 
     @Benchmark
-    public void countDigitsToString() {
-        NumberOfDigits.countDigitsToString(number);
+    public void countDigitsConvertingToStringBenchmark() {
+        countDigitsConvertingToString(number);
     }
 
     @Benchmark
-    public void countDigitsLog() {
-        NumberOfDigits.countDigitsLog(number);
+    public void countDigitsUsingCommonLogarithmBenchmark() {
+        countDigitsUsingCommonLogarithm(number);
     }
 
     @Benchmark
-    public void countDigitsBitwise() {
-        NumberOfDigits.countDigitsBitwise(number);
+    public void countDigitsUsingBitwiseShiftsBenchmark() {
+        countDigitsUsingBitwiseShifts(number);
     }
 
     @Benchmark
-    public void countDigitsByDivisionByPowerOfTwo() {
-        NumberOfDigits.countDigitsByDivisionByPowerOfTwo(number);
+    public void countDigitsUsingDivisionByPowerOfTwoBenchmark() {
+        countDigitsUsingDivisionByPowerOfTwo(number);
     }
 }
