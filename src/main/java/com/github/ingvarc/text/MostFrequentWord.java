@@ -14,6 +14,8 @@ import static java.util.stream.Collectors.groupingBy;
  */
 public class MostFrequentWord {
 
+    private MostFrequentWord(){}
+
     /**
      * Removes everything except for letters and numbers and makes capital letters lower case.
      *
@@ -46,11 +48,11 @@ public class MostFrequentWord {
     public static String getMostFrequentWord(String text) {
         String[] words = cleanText(text).split(" ");
 
-        int frequency = 1;
-        int biggestFrequency = 1;
+        int frequency = 0;
+        int biggestFrequency = 0;
         String mostFrequentWord = words.length >= 1 ? words[0] : "";
 
-        for (int i = 1; i < words.length - 1; i++) {
+        for (int i = 1; i < words.length; i++) {
             frequency = (words[i].equals(mostFrequentWord)) ? frequency + 1 : 1;
             if (frequency > biggestFrequency) {
                 biggestFrequency = frequency;
