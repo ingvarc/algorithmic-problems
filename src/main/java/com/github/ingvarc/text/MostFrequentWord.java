@@ -83,16 +83,13 @@ public class MostFrequentWord {
             }
         }
 
-        int frequency = 1;
-        String mostFrequentWord = "";
-
-        for (Map.Entry<String, Integer> entry : wordCountMap.entrySet()) {
-            if (entry.getValue() > frequency) {
-                mostFrequentWord = entry.getKey();
-                frequency = entry.getValue();
+        Map.Entry<String,Integer> mostFrequent = null;
+        for(Map.Entry<String, Integer> entry: wordCountMap.entrySet()) {
+            if(mostFrequent == null || mostFrequent.getValue() < entry.getValue()) {
+                mostFrequent = entry;
             }
         }
-        return mostFrequentWord;
+        return mostFrequent != null ? mostFrequent.getKey() : "";
     }
 
     /**
