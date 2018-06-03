@@ -1,8 +1,7 @@
 package io.github.ingvarc.text;
 
+import java.util.*;
 import java.util.AbstractMap.SimpleImmutableEntry;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 import static java.util.Comparator.comparing;
@@ -73,16 +72,12 @@ public class MostFrequentWord {
 
         HashMap<String, Integer> wordCountMap = new HashMap<>();
 
-        if (words.length == 1) {
-            return words[0];
-        }
-
         for (String word : words) {
+            int frequency = 1;
             if (wordCountMap.containsKey(word)) {
-                wordCountMap.put(word, wordCountMap.get(word) + 1);
-            } else {
-                wordCountMap.put(word, 1);
+                frequency = wordCountMap.get(word) + 1;
             }
+            wordCountMap.put(word, frequency);
         }
 
         Map.Entry<String,Integer> mostFrequent = null;
@@ -107,17 +102,6 @@ public class MostFrequentWord {
                 .stream()
                 .max(comparing(Map.Entry::getValue))
                 .orElse(new SimpleImmutableEntry<>("", 0L)).getKey();
-    }
 
-    /**
-     * The efficient solution using Trie data type.
-     *
-     * @param text any text
-     * @return the most frequent word in the given text
-     */
-    public static String getMostFrequentWordUsingTrie(String text) {
-        // TODO
-        throw new UnsupportedOperationException("The method is not yet implemented.");
     }
-
 }
