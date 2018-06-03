@@ -1,11 +1,11 @@
-package com.github.ingvarc.math;
+package io.github.ingvarc.math;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static com.github.ingvarc.math.BasicNumberManipulations.*;
+import static io.github.ingvarc.math.BasicNumberManipulations.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;

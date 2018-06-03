@@ -1,4 +1,4 @@
-package com.github.ingvarc.math;
+package io.github.ingvarc.math;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
@@ -8,7 +8,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.github.ingvarc.math.NumberOfDigits.*;
+import static io.github.ingvarc.math.NumberOfDigits.*;
 
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)

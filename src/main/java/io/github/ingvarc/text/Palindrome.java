@@ -1,4 +1,4 @@
-package com.github.ingvarc.text;
+package io.github.ingvarc.text;
 
 import java.util.stream.IntStream;
 

@@ -1,4 +1,4 @@
-package com.github.ingvarc.text;
+package io.github.ingvarc.text;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

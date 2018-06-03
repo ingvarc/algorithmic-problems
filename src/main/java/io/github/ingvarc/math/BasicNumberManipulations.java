@@ -1,4 +1,4 @@
-package com.github.ingvarc.math;
+package io.github.ingvarc.math;
 
 /**
  * Basic manipulations of POSITIVE numbers.

@@ -1,4 +1,4 @@
-package com.github.ingvarc.text;
+package io.github.ingvarc.text;
 
 import java.util.AbstractMap.SimpleImmutableEntry;
 import java.util.HashMap;

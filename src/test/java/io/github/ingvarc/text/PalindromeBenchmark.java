@@ -1,4 +1,4 @@
-package com.github.ingvarc.text;
+package io.github.ingvarc.text;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;

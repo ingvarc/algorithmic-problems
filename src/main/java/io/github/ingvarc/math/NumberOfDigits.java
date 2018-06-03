@@ -1,12 +1,11 @@
-package com.github.ingvarc.math;
+package io.github.ingvarc.math;
 
 /**
  * Different ways of getting the number of digits in a POSITIVE number.
  */
 public class NumberOfDigits {
 
-    private NumberOfDigits() {
-    }
+    private NumberOfDigits() {}
 
     /**
      * Validates the number to be positive.
